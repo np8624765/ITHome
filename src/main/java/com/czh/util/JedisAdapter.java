@@ -119,8 +119,11 @@ public class JedisAdapter implements InitializingBean {
     public <T> T getObject(Class<T> clazz, String key) {
         String json = get(key);
         if(json!=null) {
+
+
             return JSON.parseObject(json, clazz);
         }
+
         return null;
     }
 
