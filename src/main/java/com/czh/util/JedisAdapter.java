@@ -150,6 +150,7 @@ public class JedisAdapter implements InitializingBean {
             return null;
         } catch (Exception e) {
             logger.error("发生异常" + e.getMessage());
+
             return null;
         } finally {
             if (jedis != null) {
