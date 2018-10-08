@@ -119,11 +119,8 @@ public class JedisAdapter implements InitializingBean {
     public <T> T getObject(Class<T> clazz, String key) {
         String json = get(key);
         if(json!=null) {
-
-
             return JSON.parseObject(json, clazz);
         }
-
         return null;
     }
 
@@ -133,7 +130,7 @@ public class JedisAdapter implements InitializingBean {
             jedis = pool.getResource();
             return jedis.lpush(key, JSON.toJSONString(obj));
         } catch (Exception e) {
-            logger.error("发生异常" + e.getMessage());
+            logger.error("发生异常:" + e.getMessage());
             return 0;
         } finally {
             if (jedis != null) {
