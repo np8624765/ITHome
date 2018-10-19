@@ -130,7 +130,7 @@ public class JedisAdapter implements InitializingBean {
             jedis = pool.getResource();
             return jedis.lpush(key, JSON.toJSONString(obj));
         } catch (Exception e) {
-            logger.error("发生异常" + e.getMessage());
+            logger.error("发生异常: 123" + e.getMessage());
             return 0;
         } finally {
             if (jedis != null) {
@@ -150,6 +150,7 @@ public class JedisAdapter implements InitializingBean {
             return null;
         } catch (Exception e) {
             logger.error("发生异常" + e.getMessage());
+            //都打我多
             return null;
         } finally {
             if (jedis != null) {

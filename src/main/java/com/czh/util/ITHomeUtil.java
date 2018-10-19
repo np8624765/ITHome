@@ -68,7 +68,9 @@ public class ITHomeUtil {
     public static final String[] IMAGE_FILE_EXT = new String[]{"png", "jpg", "jpeg", "bmp", "gif"};
     public static boolean isFileAllowed(String ext) {
         for (String str : IMAGE_FILE_EXT) {
+
             if (str.equals(ext)) return true;
+
         }
         return false;
     }
